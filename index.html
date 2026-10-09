@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CEAC Holdings</title>
   <meta name="description" content="CEAC Holdings provides an AI phone receptionist for small service businesses.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <a class="brand" href="/">CEAC Holdings</a>
-    <nav>
+  <header class="site-header">
+    <a class="wordmark" href="/">CEAC Holdings</a>
+    <nav class="site-nav" aria-label="Main">
       <a href="/" aria-current="page">Home</a>
       <a href="/sms-opt-in.html">Call notifications</a>
       <a href="/sms-terms.html">SMS Terms</a>
@@ -18,35 +21,90 @@
     </nav>
   </header>
 
-  <main>
-    <h1>An AI receptionist that answers every call</h1>
-    <p>
-      CEAC Holdings provides an AI phone receptionist for small service businesses such as
-      plumbers, electricians and dental offices. When the business cannot pick up — after hours,
-      on a job, or on another line — our receptionist answers, takes the caller's details, books
-      appointments where the business allows it, and transfers urgent calls to the owner.
-    </p>
+  <main class="home">
+    <section class="hero">
+      <div>
+        <h1>An AI receptionist that answers every call</h1>
+        <p class="hero-lede">
+          CEAC Holdings provides an AI phone receptionist for small service businesses such as
+          plumbers, electricians and dental offices. When you cannot pick up, our receptionist
+          answers for you.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="tel:+12026447965">Call (202) 644-7965</a>
+          <a href="mailto:support@ceacholdings.com">support@ceacholdings.com</a>
+        </div>
+      </div>
 
-    <h2>Call notifications by text</h2>
-    <p>
-      Business owners who use our service can choose to receive a text message after each call
-      our receptionist answers for them, summarizing who called and why. Owners sign up on our
-      <a href="/sms-opt-in.html">call notifications page</a>. See our
-      <a href="/sms-terms.html">SMS Terms</a> for details.
-    </p>
+      <figure class="notification">
+        <p class="notification-sender">CEAC Holdings</p>
+        <div class="notification-message">
+          <dl>
+            <dt>Caller</dt>
+            <dd>Dana Ruiz, (202) 555-0148</dd>
+            <dt>Time</dt>
+            <dd>Tue 6:52 pm, 3 min</dd>
+            <dt>Wanted</dt>
+            <dd>Water heater leaking in the basement. Asked for a visit tomorrow morning.</dd>
+            <dt>Booked</dt>
+            <dd>Wed 8:00 am</dd>
+            <dt>Transfer</dt>
+            <dd>Not needed</dd>
+          </dl>
+        </div>
+        <figcaption>Example call summary. Owners who opt in get one after each call we answer.</figcaption>
+      </figure>
+    </section>
 
-    <h2>Contact</h2>
-    <p>
-      CEAC Holdings LLC<br>
-      Phone: <a href="tel:+12026447965">(202) 644-7965</a><br>
-      Email: <a href="mailto:support@ceacholdings.com">support@ceacholdings.com</a>
-    </p>
+    <section class="steps" aria-labelledby="steps-heading">
+      <h2 id="steps-heading">How it works</h2>
+      <ol>
+        <li>
+          <h3>You can't pick up</h3>
+          <p>It's after hours, you're on a job, or you're on another line.</p>
+        </li>
+        <li>
+          <h3>Our receptionist answers</h3>
+          <p>
+            It takes the caller's details, books appointments where you allow it, and transfers
+            urgent calls to you.
+          </p>
+        </li>
+        <li>
+          <h3>You get a summary</h3>
+          <p>If you opt in, a text after each call tells you who called and why.</p>
+        </li>
+      </ol>
+    </section>
+
+    <div class="home-details">
+      <section>
+        <h2>Call notifications by text</h2>
+        <p>
+          Business owners who use our service can choose to receive a text message after each call
+          our receptionist answers for them, summarizing who called and why. Owners sign up on our
+          <a href="/sms-opt-in.html">call notifications page</a>. See our
+          <a href="/sms-terms.html">SMS Terms</a> for details.
+        </p>
+      </section>
+
+      <section>
+        <h2>Contact</h2>
+        <address class="contact-block">
+          CEAC Holdings LLC<br>
+          Phone: <a href="tel:+12026447965">(202) 644-7965</a><br>
+          Email: <a href="mailto:support@ceacholdings.com">support@ceacholdings.com</a>
+        </address>
+      </section>
+    </div>
   </main>
 
-  <footer>
-    &copy; 2026 CEAC Holdings LLC &middot;
-    <a href="/privacy.html">Privacy Policy</a> &middot;
-    <a href="/sms-terms.html">SMS Terms</a>
+  <footer class="site-footer">
+    <span>&copy; 2026 CEAC Holdings LLC</span>
+    <nav aria-label="Legal">
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/sms-terms.html">SMS Terms</a>
+    </nav>
   </footer>
 </body>
 </html>

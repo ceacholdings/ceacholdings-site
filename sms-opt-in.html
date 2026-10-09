@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Call Notifications — CEAC Holdings</title>
   <meta name="description" content="Sign up to receive call notification texts from CEAC Holdings.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <a class="brand" href="/">CEAC Holdings</a>
-    <nav>
+  <header class="site-header">
+    <a class="wordmark" href="/">CEAC Holdings</a>
+    <nav class="site-nav" aria-label="Main">
       <a href="/">Home</a>
       <a href="/sms-opt-in.html" aria-current="page">Call notifications</a>
       <a href="/sms-terms.html">SMS Terms</a>
@@ -18,7 +21,7 @@
     </nav>
   </header>
 
-  <main>
+  <main class="document">
     <h1>Call notifications by text</h1>
     <p>
       Business owners who subscribe to the CEAC Holdings AI receptionist can receive a text
@@ -38,9 +41,9 @@
       submit the form.
     </p>
 
-    <div class="panel">
-      <p><strong>The consent statement on the form reads:</strong></p>
-      <p>
+    <div class="consent-preview">
+      <p class="consent-preview-title">The consent statement on the form reads:</p>
+      <p class="consent-preview-statement">
         I agree to receive call notification texts from CEAC Holdings at the number provided.
         Message frequency varies. Message and data rates may apply. Reply STOP to opt out, HELP
         for help. See our <a href="/privacy.html">Privacy Policy</a> and
@@ -58,10 +61,12 @@
     </p>
   </main>
 
-  <footer>
-    &copy; 2026 CEAC Holdings LLC &middot;
-    <a href="/privacy.html">Privacy Policy</a> &middot;
-    <a href="/sms-terms.html">SMS Terms</a>
+  <footer class="site-footer">
+    <span>&copy; 2026 CEAC Holdings LLC</span>
+    <nav aria-label="Legal">
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/sms-terms.html">SMS Terms</a>
+    </nav>
   </footer>
 </body>
 </html>
