@@ -421,6 +421,37 @@ li + li {
   color: var(--muted);
 }
 
+.sample-messages {
+  margin: 24px 0 0;
+}
+
+.sample-messages dt {
+  margin: 24px 0 8px;
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.sample-messages dt:first-child {
+  margin-top: 0;
+}
+
+.sample-messages dd {
+  margin: 0;
+}
+
+.message-bubble {
+  max-width: 30em;
+  margin: 0;
+  padding: 14px 18px;
+  background: var(--bubble);
+  border-radius: 18px 18px 18px 4px;
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
 .contact-block {
   font-style: normal;
 }
