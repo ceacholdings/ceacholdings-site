@@ -257,21 +257,6 @@ li + li {
   line-height: 1.5;
 }
 
-.notification-message dl {
-  display: grid;
-  grid-template-columns: max-content 1fr;
-  gap: 4px 14px;
-  margin: 0;
-}
-
-.notification-message dt {
-  color: var(--muted);
-}
-
-.notification-message dd {
-  margin: 0;
-}
-
 .notification figcaption {
   margin-top: 14px;
   font-size: 0.8125rem;
