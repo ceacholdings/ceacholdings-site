@@ -1,0 +1,55 @@
+# Fails if ceacholdings.com stops being a verified GitHub Pages domain.
+# The challenge TXT record was silently lost once, when DNS moved to
+# Cloudflare on 2026-10-13, and GitHub only flagged it two weeks later.
+# A failed scheduled run emails whoever last changed this file's schedule.
+name: Domain verification
+
+on:
+  schedule:
+    - cron: "17 12 * * *"
+  workflow_dispatch:
+
+permissions:
+  pages: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      DOMAIN: ceacholdings.com
+      RECORD: _github-pages-challenge-ceacholdings.ceacholdings.com
+      # Not a secret: it is published in public DNS by design.
+      EXPECTED: "027fc4c073bcfdf84f022de42908ca"
+    steps:
+      - name: Challenge record is served by every authoritative nameserver
+        run: |
+          set -euo pipefail
+          nameservers=$(dig +short NS "$DOMAIN")
+          if [ -z "$nameservers" ]; then
+            echo "::error::No NS records found for $DOMAIN"
+            exit 1
+          fi
+          failed=0
+          for ns in $nameservers; do
+            value=$(dig +short TXT "$RECORD" "@$ns" | tr -d '"')
+            if [ "$value" = "$EXPECTED" ]; then
+              echo "OK   $ns"
+            else
+              echo "::error::$ns returned '${value:-<nothing>}' for $RECORD"
+              failed=1
+            fi
+          done
+          exit "$failed"
+
+      - name: GitHub still reports the domain as verified
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          state=$(gh api "repos/${{ github.repository }}/pages" --jq '.protected_domain_state')
+          echo "protected_domain_state: $state"
+          if [ "$state" != "verified" ]; then
+            echo "::error::GitHub reports $DOMAIN as '$state'"
+            exit 1
+          fi
